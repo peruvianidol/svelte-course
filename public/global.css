@@ -223,6 +223,10 @@
 	font-size: .875rem;
 	line-height: 1.714;
 }
+.text-inherit {
+	color: inherit;
+	text-decoration: inherit;
+}
 .badge {
 	--badge-color: darkviolet;
 	font-size: .75rem;

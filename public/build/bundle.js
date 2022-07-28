@@ -707,13 +707,18 @@ var app = (function () {
     	let header;
     	let div;
     	let h1;
+    	let a;
 
     	const block = {
     		c: function create() {
     			header = element("header");
     			div = element("div");
     			h1 = element("h1");
-    			h1.textContent = "MeetUs";
+    			a = element("a");
+    			a.textContent = "MeetUs";
+    			attr_dev(a, "href", "/");
+    			attr_dev(a, "class", "text-inherit");
+    			add_location(a, file$c, 2, 26, 115);
     			attr_dev(h1, "class", "heading-1");
     			add_location(h1, file$c, 2, 4, 93);
     			attr_dev(div, "class", "container inset-square");
@@ -728,6 +733,7 @@ var app = (function () {
     			insert_dev(target, header, anchor);
     			append_dev(header, div);
     			append_dev(div, h1);
+    			append_dev(h1, a);
     		},
     		p: noop,
     		i: noop,
