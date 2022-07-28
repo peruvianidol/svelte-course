@@ -47,6 +47,10 @@
 	display: block;
 	font-weight: 600;
 }
+.container {
+	max-width: 1080px;
+	margin-inline: auto;
+}
 [class*="heading-"] {
 	font-family: 'Really Sans Large', sans-serif;
 	font-weight: 700;
@@ -61,13 +65,12 @@
 .heading-3 {
 	font-size: 1.25rem;
 }
-.flow {
+:where(.flow) {
 	--flow-size: var(--gutter);
 }
-.flow > :not(:last-child) {
+:where(.flow > :not(:last-child)) {
 	margin-block-end: var(--flow-size);
 }
-
 .block {
 	--block-size: var(--gutter);
 	margin-block-end: var(--block-size);
@@ -214,6 +217,7 @@
 	background-color: var(--badge-color);
 	color: var(--color-text-inverse);
 	border-radius: .125rem;
+	font-family: "Really Sans Small", sans-serif;
 	font-weight: 600;
 	padding: .25rem .375rem .125rem .375rem;
 	line-height: 1;

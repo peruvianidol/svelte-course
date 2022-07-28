@@ -26,8 +26,10 @@
 
 <Header/>
 
-<main class="inset-square flow">
-  <Button on:click="{() => editMode = 'add'}">Add Meetup</Button>
+<main class="inset-square flow container">
+  <div class="block" style="--block-size: 2rem;">
+    <Button on:click="{() => editMode = 'add'}">Add Meetup</Button>
+  </div>
   {#if editMode}
     <EditMeetup on:save={addMeetup} on:cancel={cancelEdit}/>
   {/if}
