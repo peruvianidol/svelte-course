@@ -9,16 +9,6 @@
   let editMode;
 
   function addMeetup(event) {
-    const meetupData = {
-      title: event.detail.title,
-      subtitle: event.detail.subtitle,
-      description: event.detail.description,
-      imageUrl: event.detail.imageUrl,
-      address: event.detail.address,
-      contactEmail: event.detail.contactEmail
-    };
-
-    meetups.addMeetup(meetupData);
     editMode = null;
   }
 

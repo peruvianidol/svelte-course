@@ -11,7 +11,7 @@
     subtitle={meetup.subtitle}
     description={meetup.description}
     imageUrl={meetup.imageUrl}
-    contactEmail={meetup.contactEmail}
+    email={meetup.email}
     address={meetup.address}
     isFav={meetup.isFavorite}
     isNew={meetup.isNew}

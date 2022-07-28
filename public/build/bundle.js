@@ -1667,7 +1667,7 @@ var app = (function () {
     	return block;
     }
 
-    // (37:4) <Button href="mailto:{contactEmail}">
+    // (37:4) <Button href="mailto:{email}">
     function create_default_slot_1$1(ctx) {
     	let t;
 
@@ -1687,7 +1687,7 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(37:4) <Button href=\\\"mailto:{contactEmail}\\\">",
+    		source: "(37:4) <Button href=\\\"mailto:{email}\\\">",
     		ctx
     	});
 
@@ -1753,7 +1753,7 @@ var app = (function () {
 
     	button0 = new Button({
     			props: {
-    				href: "mailto:" + /*contactEmail*/ ctx[6],
+    				href: "mailto:" + /*email*/ ctx[6],
     				$$slots: { default: [create_default_slot_1$1] },
     				$$scope: { ctx }
     			},
@@ -1810,28 +1810,28 @@ var app = (function () {
     			create_component(iconbutton.$$.fragment);
     			attr_dev(h2, "class", "heading-2 flex");
     			set_style(h2, "--flex-gap", ".25rem");
-    			add_location(h2, file$5, 21, 4, 519);
+    			add_location(h2, file$5, 21, 4, 512);
     			attr_dev(p0, "class", "text-subdued");
-    			add_location(p0, file$5, 26, 4, 672);
+    			add_location(p0, file$5, 26, 4, 665);
     			attr_dev(header, "class", "inset-square");
-    			add_location(header, file$5, 20, 2, 485);
+    			add_location(header, file$5, 20, 2, 478);
     			if (!src_url_equal(img.src, img_src_value = /*imageUrl*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*title*/ ctx[1]);
     			attr_dev(img, "class", "aspect-ratio block");
-    			add_location(img, file$5, 29, 4, 738);
+    			add_location(img, file$5, 29, 4, 731);
     			attr_dev(p1, "class", "line-clamp block");
     			set_style(p1, "--clamp-size", "4");
-    			add_location(p1, file$5, 31, 6, 846);
+    			add_location(p1, file$5, 31, 6, 839);
     			attr_dev(p2, "class", "text-subdued");
-    			add_location(p2, file$5, 32, 6, 922);
+    			add_location(p2, file$5, 32, 6, 915);
     			attr_dev(figcaption, "class", "inset-inline");
-    			add_location(figcaption, file$5, 30, 4, 806);
-    			add_location(figure, file$5, 28, 2, 725);
+    			add_location(figcaption, file$5, 30, 4, 799);
+    			add_location(figure, file$5, 28, 2, 718);
     			attr_dev(footer, "class", "inset-square flex");
     			set_style(footer, "--flex-gap", ".5rem");
-    			add_location(footer, file$5, 35, 2, 992);
+    			add_location(footer, file$5, 35, 2, 985);
     			attr_dev(article, "class", "card");
-    			add_location(article, file$5, 19, 0, 460);
+    			add_location(article, file$5, 19, 0, 453);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1902,7 +1902,7 @@ var app = (function () {
     			if (!current || dirty & /*description*/ 16) set_data_dev(t6, /*description*/ ctx[4]);
     			if (!current || dirty & /*address*/ 32) set_data_dev(t8, /*address*/ ctx[5]);
     			const button0_changes = {};
-    			if (dirty & /*contactEmail*/ 64) button0_changes.href = "mailto:" + /*contactEmail*/ ctx[6];
+    			if (dirty & /*email*/ 64) button0_changes.href = "mailto:" + /*email*/ ctx[6];
 
     			if (dirty & /*$$scope*/ 2048) {
     				button0_changes.$$scope = { dirty, ctx };
@@ -1965,7 +1965,7 @@ var app = (function () {
     	let { imageUrl } = $$props;
     	let { description } = $$props;
     	let { address } = $$props;
-    	let { contactEmail } = $$props;
+    	let { email } = $$props;
     	let { isFav } = $$props;
     	let { isNew = false } = $$props;
     	const dispatch = createEventDispatcher();
@@ -1977,7 +1977,7 @@ var app = (function () {
     		'imageUrl',
     		'description',
     		'address',
-    		'contactEmail',
+    		'email',
     		'isFav',
     		'isNew'
     	];
@@ -1995,7 +1995,7 @@ var app = (function () {
     		if ('imageUrl' in $$props) $$invalidate(3, imageUrl = $$props.imageUrl);
     		if ('description' in $$props) $$invalidate(4, description = $$props.description);
     		if ('address' in $$props) $$invalidate(5, address = $$props.address);
-    		if ('contactEmail' in $$props) $$invalidate(6, contactEmail = $$props.contactEmail);
+    		if ('email' in $$props) $$invalidate(6, email = $$props.email);
     		if ('isFav' in $$props) $$invalidate(7, isFav = $$props.isFav);
     		if ('isNew' in $$props) $$invalidate(8, isNew = $$props.isNew);
     	};
@@ -2011,7 +2011,7 @@ var app = (function () {
     		imageUrl,
     		description,
     		address,
-    		contactEmail,
+    		email,
     		isFav,
     		isNew,
     		dispatch
@@ -2024,7 +2024,7 @@ var app = (function () {
     		if ('imageUrl' in $$props) $$invalidate(3, imageUrl = $$props.imageUrl);
     		if ('description' in $$props) $$invalidate(4, description = $$props.description);
     		if ('address' in $$props) $$invalidate(5, address = $$props.address);
-    		if ('contactEmail' in $$props) $$invalidate(6, contactEmail = $$props.contactEmail);
+    		if ('email' in $$props) $$invalidate(6, email = $$props.email);
     		if ('isFav' in $$props) $$invalidate(7, isFav = $$props.isFav);
     		if ('isNew' in $$props) $$invalidate(8, isNew = $$props.isNew);
     	};
@@ -2040,7 +2040,7 @@ var app = (function () {
     		imageUrl,
     		description,
     		address,
-    		contactEmail,
+    		email,
     		isFav,
     		isNew,
     		dispatch,
@@ -2059,7 +2059,7 @@ var app = (function () {
     			imageUrl: 3,
     			description: 4,
     			address: 5,
-    			contactEmail: 6,
+    			email: 6,
     			isFav: 7,
     			isNew: 8
     		});
@@ -2098,8 +2098,8 @@ var app = (function () {
     			console.warn("<MeetupItem> was created without expected prop 'address'");
     		}
 
-    		if (/*contactEmail*/ ctx[6] === undefined && !('contactEmail' in props)) {
-    			console.warn("<MeetupItem> was created without expected prop 'contactEmail'");
+    		if (/*email*/ ctx[6] === undefined && !('email' in props)) {
+    			console.warn("<MeetupItem> was created without expected prop 'email'");
     		}
 
     		if (/*isFav*/ ctx[7] === undefined && !('isFav' in props)) {
@@ -2155,11 +2155,11 @@ var app = (function () {
     		throw new Error("<MeetupItem>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get contactEmail() {
+    	get email() {
     		throw new Error("<MeetupItem>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set contactEmail(value) {
+    	set email(value) {
     		throw new Error("<MeetupItem>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
@@ -2201,7 +2201,7 @@ var app = (function () {
     				subtitle: /*meetup*/ ctx[2].subtitle,
     				description: /*meetup*/ ctx[2].description,
     				imageUrl: /*meetup*/ ctx[2].imageUrl,
-    				contactEmail: /*meetup*/ ctx[2].contactEmail,
+    				email: /*meetup*/ ctx[2].email,
     				address: /*meetup*/ ctx[2].address,
     				isFav: /*meetup*/ ctx[2].isFavorite,
     				isNew: /*meetup*/ ctx[2].isNew
@@ -2226,7 +2226,7 @@ var app = (function () {
     			if (dirty & /*meetups*/ 1) meetupitem_changes.subtitle = /*meetup*/ ctx[2].subtitle;
     			if (dirty & /*meetups*/ 1) meetupitem_changes.description = /*meetup*/ ctx[2].description;
     			if (dirty & /*meetups*/ 1) meetupitem_changes.imageUrl = /*meetup*/ ctx[2].imageUrl;
-    			if (dirty & /*meetups*/ 1) meetupitem_changes.contactEmail = /*meetup*/ ctx[2].contactEmail;
+    			if (dirty & /*meetups*/ 1) meetupitem_changes.email = /*meetup*/ ctx[2].email;
     			if (dirty & /*meetups*/ 1) meetupitem_changes.address = /*meetup*/ ctx[2].address;
     			if (dirty & /*meetups*/ 1) meetupitem_changes.isFav = /*meetup*/ ctx[2].isFavorite;
     			if (dirty & /*meetups*/ 1) meetupitem_changes.isNew = /*meetup*/ ctx[2].isNew;
@@ -3279,7 +3279,7 @@ var app = (function () {
     /* src/Meetups/EditMeetup.svelte generated by Svelte v3.49.0 */
     const file$1 = "src/Meetups/EditMeetup.svelte";
 
-    // (41:0) <Modal title="Add Meetup" on:cancel>
+    // (45:0) <Modal title="Add Meetup" on:cancel>
     function create_default_slot_2(ctx) {
     	let form;
     	let textinput0;
@@ -3399,7 +3399,7 @@ var app = (function () {
     			t4 = space();
     			create_component(textinput5.$$.fragment);
     			attr_dev(form, "class", "flow");
-    			add_location(form, file$1, 41, 2, 1100);
+    			add_location(form, file$1, 45, 2, 1203);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, form, anchor);
@@ -3489,14 +3489,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(41:0) <Modal title=\\\"Add Meetup\\\" on:cancel>",
+    		source: "(45:0) <Modal title=\\\"Add Meetup\\\" on:cancel>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:4) <Button on:click={submitForm} disabled={!formIsValid}>
+    // (99:4) <Button on:click={submitForm} disabled={!formIsValid}>
     function create_default_slot_1(ctx) {
     	let t;
 
@@ -3516,14 +3516,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(95:4) <Button on:click={submitForm} disabled={!formIsValid}>",
+    		source: "(99:4) <Button on:click={submitForm} disabled={!formIsValid}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:4) <Button on:click={cancel} variant="secondary">
+    // (100:4) <Button on:click={cancel} variant="secondary">
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -3543,14 +3543,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(96:4) <Button on:click={cancel} variant=\\\"secondary\\\">",
+    		source: "(100:4) <Button on:click={cancel} variant=\\\"secondary\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (94:2) 
+    // (98:2) 
     function create_footer_slot(ctx) {
     	let div;
     	let button0;
@@ -3589,7 +3589,7 @@ var app = (function () {
     			attr_dev(div, "slot", "footer");
     			attr_dev(div, "class", "flex");
     			set_style(div, "--flex-gap", ".5rem");
-    			add_location(div, file$1, 93, 2, 2549);
+    			add_location(div, file$1, 97, 2, 2652);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -3637,7 +3637,7 @@ var app = (function () {
     		block,
     		id: create_footer_slot.name,
     		type: "slot",
-    		source: "(94:2) ",
+    		source: "(98:2) ",
     		ctx
     	});
 
@@ -3726,14 +3726,17 @@ var app = (function () {
     	const dispatch = createEventDispatcher();
 
     	function submitForm() {
-    		dispatch('save', {
+    		const meetupData = {
     			title,
     			subtitle,
-    			imageUrl,
     			description,
+    			imageUrl,
     			address,
     			email
-    		});
+    		};
+
+    		customMeetupsStore.addMeetup(meetupData);
+    		dispatch('save');
     	}
 
     	function cancel() {
@@ -3763,6 +3766,7 @@ var app = (function () {
     	}
 
     	$$self.$capture_state = () => ({
+    		meetups: customMeetupsStore,
     		createEventDispatcher,
     		TextInput,
     		Button,
@@ -3880,7 +3884,7 @@ var app = (function () {
     /* src/App.svelte generated by Svelte v3.49.0 */
     const file = "src/App.svelte";
 
-    // (40:2) <Button on:click="{() => editMode = 'add'}">
+    // (30:2) <Button on:click="{() => editMode = 'add'}">
     function create_default_slot(ctx) {
     	let t;
 
@@ -3900,14 +3904,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(40:2) <Button on:click=\\\"{() => editMode = 'add'}\\\">",
+    		source: "(30:2) <Button on:click=\\\"{() => editMode = 'add'}\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (41:2) {#if editMode}
+    // (31:2) {#if editMode}
     function create_if_block(ctx) {
     	let editmeetup;
     	let current;
@@ -3942,7 +3946,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(41:2) {#if editMode}",
+    		source: "(31:2) {#if editMode}",
     		ctx
     	});
 
@@ -3996,7 +4000,7 @@ var app = (function () {
     			attr_dev(main, "class", "inset-square flow");
     			set_style(main, "--inset-size", "2rem");
     			set_style(main, "--flow-size", "2rem");
-    			add_location(main, file, 38, 0, 882);
+    			add_location(main, file, 28, 0, 575);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4099,16 +4103,6 @@ var app = (function () {
     	let editMode;
 
     	function addMeetup(event) {
-    		const meetupData = {
-    			title: event.detail.title,
-    			subtitle: event.detail.subtitle,
-    			description: event.detail.description,
-    			imageUrl: event.detail.imageUrl,
-    			address: event.detail.address,
-    			contactEmail: event.detail.contactEmail
-    		};
-
-    		customMeetupsStore.addMeetup(meetupData);
     		$$invalidate(0, editMode = null);
     	}
 

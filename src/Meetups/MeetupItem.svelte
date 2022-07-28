@@ -10,7 +10,7 @@
   export let imageUrl;
   export let description;
   export let address;
-  export let contactEmail;
+  export let email;
   export let isFav;
   export let isNew = false;
 
@@ -34,7 +34,7 @@
     </figcaption>
   </figure>
   <footer class="inset-square flex" style="--flex-gap: .5rem">
-    <Button href="mailto:{contactEmail}">Contact</Button>
+    <Button href="mailto:{email}">Contact</Button>
     <Button variant="secondary">Show Details</Button>
     <IconButton style="{isFav ? 'fill' : 'stroke'}" classes="{isFav ? 'text-red' : 'text-subdued' }" name="heart" on:click={() => dispatch('togglefavorite', id)} />
   </footer>
