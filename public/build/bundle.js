@@ -608,7 +608,7 @@ var app = (function () {
         title: 'Coding Bootcamp',
         subtitle: 'Learn to code in 2 hours',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, harum perferendis laborum ipsum veniam vitae mollitia soluta quia cumque ducimus optio molestiae placeat quae ipsam consequatur odio similique facere dolorum!',
-        imageUrl: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
         address: 'Oak Park',
         contactEmail: 'peruvianidol@gmail.com',
         isFavorite: false,
@@ -619,7 +619,7 @@ var app = (function () {
         title: 'Beginner Basketball',
         subtitle: 'Learn the fundamentals of hoops',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus distinctio odio tempora est sed vero ea, dolore quod ab beatae dolorem debitis soluta reiciendis esse. Rem exercitationem quidem repellendus!',
-        imageUrl: 'https://images.unsplash.com/photo-1540712260984-d701320a8909?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2531&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1540712260984-d701320a8909?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
         address: 'Oak Park',
         contactEmail: 'peruvianidol@gmail.com',
         isFavorite: false,
@@ -630,7 +630,7 @@ var app = (function () {
         title: 'Advanced Yoga',
         subtitle: 'Learn more challenging poses',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, alias incidunt itaque, dignissimos quo hic maxime, magni commodi quas tenetur nobis iste expedita accusamus sapiente iusto velit cumque odio animi.',
-        imageUrl: 'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
         address: 'Oak Park',
         contactEmail: 'peruvianidol@gmail.com',
         isFavorite: false,
@@ -641,7 +641,7 @@ var app = (function () {
         title: 'Cooking for Two',
         subtitle: 'Learn simple dinner options',
         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ex eum fuga, minus in quae, dicta, ab esse magnam doloribus inventore quas impedit facere. Ipsa accusantium impedit doloremque nesciunt laboriosam.',
-        imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80',
         address: 'Oak Park',
         contactEmail: 'peruvianidol@gmail.com',
         isFavorite: false,
@@ -1455,6 +1455,7 @@ var app = (function () {
     			button = element("button");
     			create_component(icon.$$.fragment);
     			attr_dev(button, "class", button_class_value = "icon-button " + /*classes*/ ctx[2]);
+    			attr_dev(button, "aria-label", /*name*/ ctx[0]);
     			add_location(button, file$6, 8, 0, 134);
     		},
     		l: function claim(nodes) {
@@ -1478,6 +1479,10 @@ var app = (function () {
 
     			if (!current || dirty & /*classes*/ 4 && button_class_value !== (button_class_value = "icon-button " + /*classes*/ ctx[2])) {
     				attr_dev(button, "class", button_class_value);
+    			}
+
+    			if (!current || dirty & /*name*/ 1) {
+    				attr_dev(button, "aria-label", /*name*/ ctx[0]);
     			}
     		},
     		i: function intro(local) {
@@ -1818,18 +1823,19 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*imageUrl*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*title*/ ctx[1]);
     			attr_dev(img, "class", "aspect-ratio block");
+    			attr_dev(img, "loading", "lazy");
     			add_location(img, file$5, 29, 4, 731);
     			attr_dev(p1, "class", "line-clamp block");
     			set_style(p1, "--clamp-size", "4");
-    			add_location(p1, file$5, 31, 6, 839);
+    			add_location(p1, file$5, 31, 6, 854);
     			attr_dev(p2, "class", "text-subdued");
-    			add_location(p2, file$5, 32, 6, 915);
+    			add_location(p2, file$5, 32, 6, 930);
     			attr_dev(figcaption, "class", "inset-inline");
-    			add_location(figcaption, file$5, 30, 4, 799);
+    			add_location(figcaption, file$5, 30, 4, 814);
     			add_location(figure, file$5, 28, 2, 718);
     			attr_dev(footer, "class", "inset-square flex");
     			set_style(footer, "--flex-gap", ".5rem");
-    			add_location(footer, file$5, 35, 2, 985);
+    			add_location(footer, file$5, 35, 2, 1000);
     			attr_dev(article, "class", "card");
     			add_location(article, file$5, 19, 0, 453);
     		},

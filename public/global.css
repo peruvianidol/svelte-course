@@ -1,8 +1,8 @@
 :root {
 	--color-body: darkslategray;
-	--color-text-subdued: slategray;
+	--color-text-subdued: dimgray;
 	--color-text-inverse: white;
-	--color-brand: dodgerblue;
+	--color-brand: royalblue;
 	--color-brand-hover: darkblue;
 	--color-border: gainsboro;
 	--gutter: 1rem;
