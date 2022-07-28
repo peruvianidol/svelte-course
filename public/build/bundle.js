@@ -1823,21 +1823,20 @@ var app = (function () {
     			if (!src_url_equal(img.src, img_src_value = /*imageUrl*/ ctx[3])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*title*/ ctx[1]);
     			attr_dev(img, "class", "aspect-ratio block");
-    			attr_dev(img, "loading", "lazy");
     			attr_dev(img, "width", "500");
     			attr_dev(img, "height", "auto");
     			add_location(img, file$5, 29, 4, 731);
     			attr_dev(p1, "class", "line-clamp block");
     			set_style(p1, "--clamp-size", "4");
-    			add_location(p1, file$5, 31, 6, 880);
+    			add_location(p1, file$5, 31, 6, 865);
     			attr_dev(p2, "class", "text-subdued");
-    			add_location(p2, file$5, 32, 6, 956);
+    			add_location(p2, file$5, 32, 6, 941);
     			attr_dev(figcaption, "class", "inset-inline");
-    			add_location(figcaption, file$5, 30, 4, 840);
+    			add_location(figcaption, file$5, 30, 4, 825);
     			add_location(figure, file$5, 28, 2, 718);
     			attr_dev(footer, "class", "inset-square flex");
     			set_style(footer, "--flex-gap", ".5rem");
-    			add_location(footer, file$5, 35, 2, 1026);
+    			add_location(footer, file$5, 35, 2, 1011);
     			attr_dev(article, "class", "card");
     			add_location(article, file$5, 19, 0, 453);
     		},

@@ -27,7 +27,7 @@
     <p class="text-subdued">{subtitle}</p>
   </header>
   <figure>
-    <img src="{imageUrl}" alt="{title}" class="aspect-ratio block" loading="lazy" width="500" height="auto">
+    <img src="{imageUrl}" alt="{title}" class="aspect-ratio block" width="500" height="auto">
     <figcaption class="inset-inline">
       <p class="line-clamp block" style="--clamp-size: 4">{description}</p>
       <p class="text-subdued">{address}</p>
