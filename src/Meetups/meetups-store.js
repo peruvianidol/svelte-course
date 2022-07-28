@@ -44,6 +44,28 @@ const meetups = writable([
     contactEmail: 'peruvianidol@gmail.com',
     isFavorite: false,
     isNew: false
+  },
+  {
+    id: '5',
+    title: 'Wine Tasting',
+    subtitle: 'Learn how to appreciate wine',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita at veniam delectus veritatis quo inventore cum mollitia. Deserunt est officiis accusantium ratione eligendi saepe magni corrupti, earum iusto molestias et.',
+    imageUrl: '/images/wine-tasting.webp',
+    address: 'Oak Park',
+    contactEmail: 'peruvianidol@gmail.com',
+    isFavorite: false,
+    isNew: false
+  },
+  {
+    id: '6',
+    title: 'Kids Soccer',
+    subtitle: 'Learn the basics of the beautiful game',
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio voluptas dolorum quidem ullam nam exercitationem quos porro beatae temporibus et ex amet culpa assumenda voluptatum harum, voluptate rem quod enim.',
+    imageUrl: '/images/kids-soccer.webp',
+    address: 'Oak Park',
+    contactEmail: 'peruvianidol@gmail.com',
+    isFavorite: false,
+    isNew: false
   }
 ]);
 
