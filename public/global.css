@@ -81,7 +81,7 @@
 	gap: var(--flex-gap);
 }
 .grid {
-	--column-min: 360px;
+	--column-min: 300px;
 	--grid-gap: var(--gutter);
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(var(--column-min), 1fr));

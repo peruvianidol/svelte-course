@@ -688,9 +688,8 @@ var app = (function () {
     			h1 = element("h1");
     			h1.textContent = "MeetUs";
     			attr_dev(h1, "class", "heading-1");
-    			add_location(h1, file$b, 1, 2, 86);
+    			add_location(h1, file$b, 1, 2, 59);
     			attr_dev(header, "class", "text-inverse surface-brand inset-square");
-    			set_style(header, "--inset-size", "2rem");
     			add_location(header, file$b, 0, 0, 0);
     		},
     		l: function claim(nodes) {
@@ -4005,8 +4004,6 @@ var app = (function () {
     			t3 = space();
     			create_component(meetupgrid.$$.fragment);
     			attr_dev(main, "class", "inset-square flow");
-    			set_style(main, "--inset-size", "2rem");
-    			set_style(main, "--flow-size", "2rem");
     			add_location(main, file, 28, 0, 575);
     		},
     		l: function claim(nodes) {
