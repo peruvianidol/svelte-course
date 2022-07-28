@@ -7,6 +7,27 @@
 	--color-border: gainsboro;
 	--gutter: 1rem;
 }
+@font-face { 
+	font-family: "Really Sans Large";
+	src: url(/fonts/ReallySansLarge-Bold.woff2) format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face { 
+	font-family: "Really Sans Small";
+	src: url(/fonts/ReallySansSmall-Regular.woff2) format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face { 
+	font-family: "Really Sans Small";
+	src: url(/fonts/ReallySansSmall-Semibold.woff2) format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
 * {
 	box-sizing: border-box;
 	margin: 0;
