@@ -5,20 +5,28 @@
   import Button from './UI/Button.svelte';
   import MeetupGrid from './Meetups/MeetupGrid.svelte';
   import EditMeetup from './Meetups/EditMeetup.svelte';
-  
+  import MeetupDetail from './Meetups/MeetupDetail.svelte';
+
   let editMode;
+  let page = 'overview';
+  let pageData = {};
 
-  function addMeetup(event) {
+  function addMeetup() {
     editMode = null;
-  }
-
-  function toggleFavorite(event) {
-    const id = event.detail;
-    meetups.toggleFavorite(id);
   }
 
   function cancelEdit() {
     editMode = null;
+  }
+
+  function showDetails(event) {
+    page = 'details';
+    pageData.id = event.detail;
+  }
+  
+  function closeDetails() {
+    page = 'overview';
+    pageData = {};
   }
 </script>
 
@@ -27,11 +35,15 @@
 <Header/>
 
 <main class="inset-square flow container">
-  <div class="block" style="--block-size: 2rem;">
-    <Button on:click="{() => editMode = 'add'}">Add Meetup</Button>
-  </div>
-  {#if editMode}
-    <EditMeetup on:save={addMeetup} on:cancel={cancelEdit}/>
+  {#if page === 'overview'}
+    <div class="block" style="--block-size: 2rem;">
+      <Button on:click="{() => editMode = 'add'}">Add Meetup</Button>
+    </div>
+    {#if editMode}
+      <EditMeetup on:save={addMeetup} on:cancel={cancelEdit}/>
+    {/if}
+    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails}/>
+  {:else}
+    <MeetupDetail id={pageData.id} on:close={closeDetails}/>
   {/if}
-  <MeetupGrid meetups="{$meetups}" on:togglefavorite="{toggleFavorite}" />
 </main>

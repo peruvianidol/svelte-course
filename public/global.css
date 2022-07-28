@@ -104,6 +104,19 @@
 	align-items: var(--flex-align);
 	gap: var(--flex-gap);
 }
+@media (min-width: 600px) {
+	.flex-responsive {
+		--flex-display: flex;
+		--flex-align: center;
+		--flex-gap: var(--gutter);
+		display: var(--flex-display);
+		align-items: var(--flex-align);
+		gap: var(--flex-gap);
+	}
+}
+.flex-item {
+	flex: 1;
+}
 .grid {
 	--column-min: 300px;
 	--grid-gap: var(--gutter);
