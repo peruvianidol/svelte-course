@@ -11,10 +11,10 @@
     subtitle={meetup.subtitle}
     description={meetup.description}
     imageUrl={meetup.imageUrl}
-    email={meetup.email}
     address={meetup.address}
     isFav={meetup.isFavorite}
     isNew={meetup.isNew}
-    on:showDetails/>
+    on:showDetails
+    on:edit />
   {/each}
 </section>

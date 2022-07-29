@@ -28,7 +28,7 @@
     <p>{selectedMeetup.address}</p>
 
     <div class="flex" style="--flex-gap: .5rem;">
-      <Button href="mailto:{selectedMeetup.email}">Contact</Button>
+      
       <Button type="button" variant="secondary" on:click={() => dispatch('close')}>Close</Button>  
     </div>
   </figcaption>

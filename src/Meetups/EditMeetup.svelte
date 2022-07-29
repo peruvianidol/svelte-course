@@ -3,15 +3,30 @@
   import { createEventDispatcher } from 'svelte';
   import TextInput from '../UI/TextInput.svelte';
   import Button from '../UI/Button.svelte';
+  import IconButton from '../UI/IconButton.svelte';
   import Modal from '../UI/Modal.svelte';
-  import { isEmpty, isValidEmail } from '../helpers/validation.js';
+  import { isEmpty } from '../helpers/validation.js';
  
+  export let id = null;
+
   let title = "";
   let subtitle = "";
   let imageUrl = "";
   let description = "";
   let address = "";
-  let email = "";
+
+  if (id) {
+    const unsubscribe = meetups.subscribe(items => {
+      const selectedMeetup = items.find(i => i.id === id);
+      title = selectedMeetup.title;
+      subtitle = selectedMeetup.subtitle;
+      imageUrl = selectedMeetup.imageUrl;
+      description = selectedMeetup.description;
+      address = selectedMeetup.address;
+    });
+
+    unsubscribe();    
+  }
 
   const dispatch = createEventDispatcher();
 
@@ -20,8 +35,7 @@
   $: imageUrlValid = !isEmpty(imageUrl);
   $: descriptionValid = !isEmpty(description);
   $: addressValid = !isEmpty(address);
-  $: emailValid = isValidEmail(email);
-  $: formIsValid = titleValid && subtitleValid && imageUrlValid && descriptionValid && addressValid && emailValid;
+  $: formIsValid = titleValid && subtitleValid && imageUrlValid && descriptionValid && addressValid;
 
   function submitForm() {
     const meetupData = {
@@ -29,12 +43,20 @@
       subtitle: subtitle,
       description: description,
       imageUrl: imageUrl,
-      address: address,
-      email: email
+      address: address
     };
 
-    meetups.addMeetup(meetupData);
+    if (id) {
+      meetups.updateMeetup(id, meetupData);
+    } else {
+      meetups.addMeetup(meetupData);
+    }
     dispatch('save');
+  }
+
+  function deleteMeetup() {
+    meetups.removeMeetup(id);
+    dispatch("save");
   }
 
   function cancel() {
@@ -42,7 +64,7 @@
   }
 </script>
 
-<Modal title="Add Meetup" on:cancel>
+<Modal title="Edit Meetup Data" on:cancel>
   <form on:submit|preventDefault="{submitForm}" class="flow">
     <TextInput 
       id="title"
@@ -85,18 +107,12 @@
       value="{address}"
       on:input={event => (address = event.target.value)}
     />
-    <TextInput 
-      id="email"
-      label="Email"
-      valid={emailValid}
-      validityMessage="Please enter a valid email."
-      value="{email}"
-      type="email"
-      on:input={event => (email = event.target.value)}
-    />
   </form>
   <div slot="footer" class="flex" style="--flex-gap: .5rem;">
     <Button on:click={submitForm} disabled={!formIsValid}>Save</Button>
     <Button on:click={cancel} variant="secondary">Cancel</Button>
+    {#if id}
+      <IconButton classes="text-subdued" name="trash" on:click={deleteMeetup} />
+    {/if}
   </div>
 </Modal>

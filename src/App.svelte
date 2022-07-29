@@ -8,15 +8,18 @@
   import MeetupDetail from './Meetups/MeetupDetail.svelte';
 
   let editMode;
+  let editedId;
   let page = 'overview';
   let pageData = {};
 
-  function addMeetup() {
+  function savedMeetup() {
     editMode = null;
+    editedId = null;
   }
 
   function cancelEdit() {
     editMode = null;
+    editedId = null;
   }
 
   function showDetails(event) {
@@ -28,6 +31,11 @@
     page = 'overview';
     pageData = {};
   }
+
+  function startEdit(event) {
+    editMode = 'edit';
+    editedId = event.detail;
+  }
 </script>
 
 <IconSprite/>
@@ -37,12 +45,12 @@
 <main class="inset-square flow container">
   {#if page === 'overview'}
     <div class="block" style="--block-size: 2rem;">
-      <Button on:click="{() => editMode = 'add'}">Add Meetup</Button>
+      <Button on:click="{() => editMode = 'edit'}">New Meetup</Button>
     </div>
-    {#if editMode}
-      <EditMeetup on:save={addMeetup} on:cancel={cancelEdit}/>
+    {#if editMode === 'edit'}
+      <EditMeetup id={editedId} on:save={savedMeetup} on:cancel={cancelEdit}/>
     {/if}
-    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails}/>
+    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails} on:edit={startEdit} />
   {:else}
     <MeetupDetail id={pageData.id} on:close={closeDetails}/>
   {/if}
