@@ -25,7 +25,7 @@
 </div>
 
 <section id="meetups" class="grid">
-  {#each filteredMeetups as meetup}
+  {#each filteredMeetups as meetup (meetup.id)}
     <MeetupItem 
     id={meetup.id}
     title={meetup.title}

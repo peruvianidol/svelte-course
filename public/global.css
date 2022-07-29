@@ -11,6 +11,8 @@
 	--color-favorite: red;
 	--color-error: red;
 	--gutter: 1rem;
+	--font-family-body: 'Really Sans Small', sans-serif;
+	--font-family-heading: 'Really Sans Large', sans-serif;
 }
 @font-face { 
 	font-family: "Really Sans Large";
@@ -39,10 +41,9 @@
 	font: inherit;
 }
 :where(body) {
-	font-family: 'Really Sans Small', sans-serif;
+	font-family: var(--font-family-body);
 	line-height: 1.5;
 	color: var(--color-body);
-	scrollbar-gutter: stable both-edges;
 }
 :where(img) {
 	display: block;
@@ -58,7 +59,7 @@
 	margin-inline: auto;
 }
 [class*="heading-"] {
-	font-family: 'Really Sans Large', sans-serif;
+	font-family: var(--font-family-heading);
 	font-weight: 700;
 	line-height: 1.2;
 }
