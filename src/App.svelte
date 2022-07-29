@@ -44,13 +44,10 @@
 
 <main class="inset-square flow container">
   {#if page === 'overview'}
-    <div class="block" style="--block-size: 2rem;">
-      <Button on:click="{() => editMode = 'edit'}">New Meetup</Button>
-    </div>
     {#if editMode === 'edit'}
       <EditMeetup id={editedId} on:save={savedMeetup} on:cancel={cancelEdit}/>
     {/if}
-    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails} on:edit={startEdit} />
+    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails} on:edit={startEdit} on:add={() => {editMode = 'edit'}}/>
   {:else}
     <MeetupDetail id={pageData.id} on:close={closeDetails}/>
   {/if}
