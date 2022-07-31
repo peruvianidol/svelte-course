@@ -24,18 +24,22 @@
   <Button on:click="{() => dispatch('add')}">New Meetup</Button>
 </div>
 
-<section id="meetups" class="grid">
-  {#each filteredMeetups as meetup (meetup.id)}
-    <MeetupItem 
-    id={meetup.id}
-    title={meetup.title}
-    subtitle={meetup.subtitle}
-    description={meetup.description}
-    imageUrl={meetup.imageUrl}
-    address={meetup.address}
-    isFav={meetup.isFavorite}
-    isNew={meetup.isNew}
-    on:showDetails
-    on:edit />
-  {/each}
-</section>
+{#if filteredMeetups.length === 0}
+  <p>There are currently no meetups.</p>
+{:else}
+  <section id="meetups" class="grid">
+    {#each filteredMeetups as meetup (meetup.id)}
+      <MeetupItem 
+      id={meetup.id}
+      title={meetup.title}
+      subtitle={meetup.subtitle}
+      description={meetup.description}
+      imageUrl={meetup.imageUrl}
+      address={meetup.address}
+      isFav={meetup.isFavorite}
+      isNew={meetup.isNew}
+      on:showDetails
+      on:edit />
+    {/each}
+  </section>
+{/if}

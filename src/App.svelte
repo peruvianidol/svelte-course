@@ -11,6 +11,30 @@
   let editedId;
   let page = 'overview';
   let pageData = {};
+  let isLoading = true;
+
+  fetch('https://meetus-63fba-default-rtdb.firebaseio.com/meetups.json')
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Fetching meetups failed.');
+    }
+    return res.json();
+  })
+  .then(data => {
+    const loadedMeetups = [];
+    for (const key in data) {
+      loadedMeetups.push({
+        ...data[key],
+        id: key
+      });
+    }
+    isLoading = false;
+    meetups.setMeetups(loadedMeetups.reverse());
+  })
+  .catch(err => {
+    isLoading = false;
+    console.log(err);
+  });
 
   function savedMeetup() {
     editMode = null;
@@ -47,7 +71,11 @@
     {#if editMode === 'edit'}
       <EditMeetup id={editedId} on:save={savedMeetup} on:cancel={cancelEdit}/>
     {/if}
-    <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails} on:edit={startEdit} on:add={() => {editMode = 'edit'}}/>
+    {#if isLoading}
+      <p>Loading...</p>
+    {:else}
+      <MeetupGrid meetups="{$meetups}" on:showDetails={showDetails} on:edit={startEdit} on:add={() => {editMode = 'edit'}}/>
+    {/if}
   {:else}
     <MeetupDetail id={pageData.id} on:close={closeDetails}/>
   {/if}
